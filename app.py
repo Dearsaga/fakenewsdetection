@@ -4,6 +4,8 @@ import re
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import nltk
+from urllib.parse import quote as url_quote
+
 
 app = Flask(__name__)
 #app = Flask(__name__, static_folder='K:\\fake\\static', static_url_path='/static')
