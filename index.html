@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fake.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="title-bar">
+            <h1>Fake News Detection</h1>
+        </div>
+        <nav class="task-bar">
+            <ul>
+                <li><a action="/" href="">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/help">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            
+            <p class="catchy-phrase">Discover the Truth: Analyze Your News Article Below!</p>
+
+            <form id="news-form" action="/predict" method="POST">
+                <textarea name="news" id="news" placeholder="Enter news article text here" required></textarea>
+                <button type="submit">Analyze</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Fake News Detection. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('news-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new URLSearchParams(new FormData(this));
+            console.log("Form data:", formData.toString());
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    
+                },
+                
+                body: new URLSearchParams(new FormData(this))
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = `Prediction: ${data.result}`;
+            });
+        });
+        
+    </script>
+</body>
+</html>

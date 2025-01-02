@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Fake News Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="title-bar">
+            <h1>Fake News Detection</h1>
+        </div>
+        <nav class="task-bar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/help">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>About the Fake News Detection Project</h2>
+            <p>
+                Welcome to the Fake News Detection project! Our mission is to provide a robust solution to identify and combat misinformation by leveraging advanced Natural Language Processing (NLP) techniques and machine learning models. In an era where fake news can spread like wildfire, our goal is to ensure users have access to accurate and trustworthy information.
+            </p>
+            <h3>Project Features</h3>
+            <ul>
+                <li><strong>Dataset:</strong> We utilize a comprehensive dataset sourced from Kaggle, containing labeled fake and real news articles. This dataset provides a rich source of information for training our model.</li>
+                <li><strong>NLP Techniques:</strong> Our preprocessing pipeline includes tokenization, stemming, and lemmatization to clean and standardize text data, ensuring it is ready for analysis.</li>
+                <li><strong>TF-IDF Vectorization:</strong> We convert text data into numerical features using the TF-IDF vectorizer. This step transforms words into a format that can be understood by machine learning algorithms.</li>
+                <li><strong>Machine Learning Model:</strong> We employ a Decision Tree Classifier to predict the authenticity of news articles. Our model has achieved an impressive accuracy of 99.52%.</li>
+                <li><strong>Web Application:</strong> Built using Flask, our user-friendly web application allows users to input news articles and receive real-time analysis on whether the news is likely fake or real.</li>
+            </ul>
+            <h3>How It Works</h3>
+            <ol>
+                <li><strong>Input News Article:</strong> Users enter a news article into the text box provided in the web application.</li>
+                <li><strong>Text Preprocessing:</strong> The input text undergoes preprocessing, which includes removing special characters, converting text to lowercase, tokenization, stemming, and lemmatization.</li>
+                <li><strong>TF-IDF Vectorization:</strong> The preprocessed text is transformed into numerical features using the TF-IDF vectorizer.</li>
+                <li><strong>Model Prediction:</strong> The vectorized text is fed into the Decision Tree Classifier, which predicts whether the news is fake or real based on patterns learned from the training data.</li>
+                <li><strong>Output Result:</strong> The result is displayed to the user, indicating whether the news is "Fake News" or "Real News".</li>
+            </ol>
+            <h3>Technologies Used</h3>
+            <ul>
+                <li><strong>Python:</strong> The backbone of our project, providing powerful libraries and frameworks for data processing and machine learning.</li>
+                <li><strong>Flask:</strong> A lightweight web framework used to build our user-friendly web application.</li>
+                <li><strong>scikit-learn:</strong> A robust machine learning library used to train and evaluate our Decision Tree Classifier.</li>
+                <li><strong>NLTK:</strong> The Natural Language Toolkit, used for text preprocessing tasks such as tokenization, stemming, and lemmatization.</li>
+                <li><strong>HTML, CSS, JavaScript:</strong> Front-end technologies used to create an engaging and interactive user interface.</li>
+            </ul>
+            <p>
+                By integrating these technologies and methodologies, the Fake News Detection project offers a reliable solution to identify and combat misinformation. Our web application empowers users to verify the authenticity of news articles, contributing to a more informed and discerning public.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Fake News Detection. All rights reserved.</p>
+    </footer>
+</body>
+</html>
